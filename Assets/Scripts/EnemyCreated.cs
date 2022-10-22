@@ -14,7 +14,7 @@ public class EnemyCreated : MonoBehaviour
     
     void Update()
     {
-        if (time >= 3)
+        if (time >= 10)
         {
             Instantiate(enemy, new Vector3(0f, 0.6f, 11f), Quaternion.identity);
             time = 0;
