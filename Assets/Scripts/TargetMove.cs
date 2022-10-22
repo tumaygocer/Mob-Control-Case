@@ -7,11 +7,13 @@ public class TargetMove : MonoBehaviour
 
     bool right;
     bool left;
+    public GameObject shoot;
+    float shootTime;
 
 
     void Start()
     {
-
+        shootTime = 0;
     }
 
 
@@ -23,6 +25,15 @@ public class TargetMove : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch finger = Input.GetTouch(0);
+            if (shootTime >= 0.3f)
+            {
+                Instantiate(shoot, new Vector3(0f, 0.35f, -14.23f), Quaternion.identity);
+                shootTime = 0;
+            }
+            else
+            {
+                shootTime += 0.4f;
+            }
 
             if (finger.deltaPosition.x > 50.0f)
             {
