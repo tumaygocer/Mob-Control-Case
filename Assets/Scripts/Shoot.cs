@@ -8,6 +8,4 @@ public class Shoot : MonoBehaviour
     {
         transform.Translate(Vector3.forward);
     }
-
-    
 }

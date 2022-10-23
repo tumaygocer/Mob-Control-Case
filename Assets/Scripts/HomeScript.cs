@@ -1,36 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class HomeScript : MonoBehaviour
 {
     int lifeTimeHome;
-    public Image homeHealtBar;
     public GameObject WinPanel;
+    public TextMeshProUGUI shootCount;
    
     void Start()
     {
         Time.timeScale = 1;
-        lifeTimeHome = 50;
+        lifeTimeHome = 100;
     }
-
-   
+    void Win()
+    {
+        WinPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("shoot"))
         {
             lifeTimeHome -= 1;
-            homeHealtBar.fillAmount -= 0.02f;
+            shootCount.text = lifeTimeHome.ToString();
             
         }
         if (lifeTimeHome == 0)
         {
             GetComponent<MeshRenderer>().material.color = Color.red;
-            WinPanel.SetActive(true);
-            Time.timeScale = 0;
+            Invoke("Win", 2);
         }
         
     }
+
 }
