@@ -16,6 +16,7 @@ public class TargetMove : MonoBehaviour
     public Image targetHealtBar;
 
 
+
     void Start()
     {
         shootTime = 0;
@@ -37,17 +38,17 @@ public class TargetMove : MonoBehaviour
                 shootTime = 0;
             }
             else
-            {
+            {              
                 shootTime += 0.25f;
             }
 
-            if (finger.deltaPosition.x > 50.0f)
+            if (finger.deltaPosition.x > 20.0f)
             {
                 right = true;
                 left = false;
             }
 
-            if (finger.deltaPosition.x < -50.0f)
+            if (finger.deltaPosition.x < -20.0f)
             {
                 right = false;
                 left = true;

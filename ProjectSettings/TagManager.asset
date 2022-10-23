@@ -7,6 +7,7 @@ TagManager:
   - shoot
   - enemy
   - target
+  - home
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyCreated : MonoBehaviour
 {
     int time;
-    public GameObject enemy;    
+    public GameObject enemy;
+    int enemymake = 50;
     void Start()
     {
         time = 0;
@@ -14,9 +15,10 @@ public class EnemyCreated : MonoBehaviour
     
     void Update()
     {
-        if (time >= 60)
+        if (time >= 60 && enemymake != 0)
         {
             Instantiate(enemy, new Vector3(0f, 0.6f, 11f), Quaternion.identity);
+            enemymake -= 1;
             time = 0;
         }
         else
