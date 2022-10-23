@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TargetMove : MonoBehaviour
 {
@@ -19,8 +20,13 @@ public class TargetMove : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         shootTime = 0;
-        targetHealtBar.fillAmount -= .1f;
+    }
+
+    public void GameAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
@@ -72,10 +78,12 @@ public class TargetMove : MonoBehaviour
             if (lifeBar != 0)
             {
                 lifeBar -= 1;
+                targetHealtBar.fillAmount -= 1/60f;
             }
             else
             {
                 gameOverPanel.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
