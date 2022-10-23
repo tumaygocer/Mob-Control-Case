@@ -7,9 +7,11 @@ public class HomeScript : MonoBehaviour
 {
     int lifeTimeHome;
     public Image homeHealtBar;
+    public GameObject WinPanel;
    
     void Start()
     {
+        Time.timeScale = 1;
         lifeTimeHome = 50;
     }
 
@@ -26,6 +28,8 @@ public class HomeScript : MonoBehaviour
         if (lifeTimeHome == 0)
         {
             GetComponent<MeshRenderer>().material.color = Color.red;
+            WinPanel.SetActive(true);
+            Time.timeScale = 0;
         }
         
     }
