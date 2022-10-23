@@ -9,6 +9,8 @@ public class EnemyCreated : MonoBehaviour
     public GameObject enemy;
     int enemymake = 50;
     public TextMeshProUGUI enemyCount;
+    float xRight = 1;
+    float xLeft = -1;
     void Start()
     {
         time = 0;
@@ -19,7 +21,7 @@ public class EnemyCreated : MonoBehaviour
     {
         if (time >= 10 && enemymake != 0)
         {
-            Instantiate(enemy, new Vector3(0f, 0.6f, 11f), Quaternion.identity);
+            Instantiate(enemy, new Vector3(Random.Range(xRight, xLeft), 0.6f, 11f), Quaternion.identity);
             enemymake -= 1;
             enemyCount.text = enemymake.ToString();
             time = 0;
