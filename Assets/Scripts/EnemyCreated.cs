@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCreated : MonoBehaviour
 {
     int time;
-    public GameObject enemy;
+    public GameObject enemy;    
     void Start()
     {
         time = 0;
@@ -14,7 +14,7 @@ public class EnemyCreated : MonoBehaviour
     
     void Update()
     {
-        if (time >= 10)
+        if (time >= 60)
         {
             Instantiate(enemy, new Vector3(0f, 0.6f, 11f), Quaternion.identity);
             time = 0;
@@ -24,4 +24,5 @@ public class EnemyCreated : MonoBehaviour
             time += 1;
         }
     }
+    
 }

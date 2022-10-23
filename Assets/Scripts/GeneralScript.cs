@@ -19,4 +19,12 @@ public class GeneralScript : MonoBehaviour
     {
         agent.destination = target.position;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("shoot"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

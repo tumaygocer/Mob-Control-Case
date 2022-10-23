@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    
-   
     void Update()
     {
         transform.Translate(Vector3.forward);
     }
+
+    
 }

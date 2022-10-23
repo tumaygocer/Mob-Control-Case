@@ -11,7 +11,7 @@ public class TargetMove : MonoBehaviour
     public GameObject shoot;
     public GameObject shootTransform;
     float shootTime;
-    int lifeBar = 30;
+    int lifeBar = 60;
     public GameObject gameOverPanel;
     public Image targetHealtBar;
 
@@ -68,8 +68,11 @@ public class TargetMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-            lifeBar -= 1;
-            if (lifeBar == 0)
+            if (lifeBar != 0)
+            {
+                lifeBar -= 1;
+            }
+            else
             {
                 gameOverPanel.SetActive(true);
             }
