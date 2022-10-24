@@ -12,7 +12,7 @@ public class TargetMove : MonoBehaviour
     public GameObject shoot;
     public GameObject shootTransform;
     float shootTime;
-    int lifeBar = 60;
+    int lifeBar = 10;
     public GameObject gameOverPanel;
     public Image targetHealtBar;
     public AudioSource sounds;
@@ -80,7 +80,7 @@ public class TargetMove : MonoBehaviour
             if (lifeBar != 0)
             {
                 lifeBar -= 1;
-                targetHealtBar.fillAmount -= 1/60f;
+                targetHealtBar.fillAmount -= 1/10f;
             }
             else
             {

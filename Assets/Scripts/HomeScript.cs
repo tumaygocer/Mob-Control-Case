@@ -28,7 +28,7 @@ public class HomeScript : MonoBehaviour
             shootCount.text = lifeTimeHome.ToString();
             
         }
-        if (lifeTimeHome == 1)
+        if (lifeTimeHome == 2)
         {
             GetComponent<MeshRenderer>().material.color = Color.red;
             Invoke("Win", 0.5f);
