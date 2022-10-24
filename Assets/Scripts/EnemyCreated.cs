@@ -17,7 +17,7 @@ public class EnemyCreated : MonoBehaviour
     
     void Update()
     {
-        if (time >= 60 && enemymake != 0)
+        if (time >= 50 && enemymake != 0)
         {
             Instantiate(enemy, new Vector3(Random.Range(xRight, xLeft), 0.6f, 11f), Quaternion.identity);
             enemymake -= 1;

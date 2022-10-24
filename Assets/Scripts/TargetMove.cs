@@ -15,6 +15,7 @@ public class TargetMove : MonoBehaviour
     int lifeBar = 60;
     public GameObject gameOverPanel;
     public Image targetHealtBar;
+    public AudioSource sounds;
 
 
 
@@ -41,6 +42,7 @@ public class TargetMove : MonoBehaviour
             if (shootTime >= 1f)
             {
                 Instantiate(shoot,shootTransform.transform.position, Quaternion.identity);
+                sounds.Play();
                 shootTime = 0;
             }
             else

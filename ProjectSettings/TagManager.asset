@@ -9,6 +9,9 @@ TagManager:
   - target
   - home
   - clonner
+  - move
+  - Left
+  - Right
   layers:
   - Default
   - TransparentFX
