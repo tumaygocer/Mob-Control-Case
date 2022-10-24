@@ -27,4 +27,6 @@ public class GeneralScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+   
 }
