@@ -28,10 +28,10 @@ public class HomeScript : MonoBehaviour
             shootCount.text = lifeTimeHome.ToString();
             
         }
-        if (lifeTimeHome == 0)
+        if (lifeTimeHome == 1)
         {
             GetComponent<MeshRenderer>().material.color = Color.red;
-            Invoke("Win", 2);
+            Invoke("Win", 0.5f);
         }
         
     }
